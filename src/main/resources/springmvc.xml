@@ -11,5 +11,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/page/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <mvc:resources mapping="/static/**" location="/static/"/>
     <mvc:annotation-driven/>
 </beans>

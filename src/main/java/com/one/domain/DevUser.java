@@ -10,14 +10,14 @@ import java.util.Date;
 public class DevUser implements Serializable {
 
     @Id
-    private Long id;
-    private String devCode;
-    private String devName;
-    private String devPassword;
-    private String devEmail;
-    private String devInfo;
-    private Long creatBy;
-    private Date creationDate;
+    private Long id; //id
+    private String devCode; //开发者账户
+    private String devName; //开发者名称
+    private String devPassword; //账户密码
+    private String devEmail; //开发者邮箱
+    private String devInfo; //开发者简介
+    private Long creatBy; //创建者（来源于backend_user用户表的用户id）
+    private Date creationDate; //创建时间
 
     public Long getId() {
         return id;
