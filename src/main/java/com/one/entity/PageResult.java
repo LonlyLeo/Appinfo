@@ -1,29 +1,48 @@
 package com.one.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
-/**
- * 分页结果封装对象
- */
-public class PageResult implements Serializable{
-    private Long total;//总记录数
-    private List rows;//当前页结果
-    public PageResult(Long total, List rows) {
-        super();
-        this.total = total;
-        this.rows = rows;
+public class PageResult<T> {
+
+    private Long total;
+    private Integer totalPage;
+    private List<T> items;
+
+    public PageResult() {
     }
+
+    public PageResult(Long total, Integer totalPage, List<T> items) {
+        this.total = total;
+        this.totalPage = totalPage;
+        this.items = items;
+    }
+
+    public PageResult(Long total, List<T> items) {
+        this.total = total;
+        this.items = items;
+    }
+
     public Long getTotal() {
         return total;
     }
+
     public void setTotal(Long total) {
         this.total = total;
     }
-    public List getRows() {
-        return rows;
+
+    public Integer getTotalPage() {
+        return totalPage;
     }
-    public void setRows(List rows) {
-        this.rows = rows;
+
+    public void setTotalPage(Integer totalPage) {
+        this.totalPage = totalPage;
+    }
+
+    public List<T> getItems() {
+        return items;
+    }
+
+    public void setItems(List<T> items) {
+        this.items = items;
     }
 }
