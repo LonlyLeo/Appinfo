@@ -1,5 +1,7 @@
 package com.one.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.one.dao.AppDao;
 import com.one.domain.AppInfo;
 import com.one.entity.PageResult;
@@ -19,16 +21,19 @@ public class AppServiceImpl implements AppService {
     private AppDao appDao;
 
     @Override
-    public PageResult<QueryAppResult> queryApp(QueryBean queryBean,Integer page,Integer rows) {
+    public PageResult<AppInfo> queryApp(QueryBean queryBean,Integer page,Integer rows) {
 
-        if (queryBean == null){
+        /*if (queryBean == null){
             return null;
-        }
+        }*/
+        //添加分页
+        PageHelper.startPage(page,rows);
         //根据存在条件查询AppInfo
         List<AppInfo> appinfos = this.appDao.queryApp(queryBean);
+        //包装分页记录
+        PageInfo pageInfo = new PageInfo(appinfos);
 
-
-        return null;
+        return new PageResult<>(pageInfo.getTotal(),pageInfo.getPages(),pageInfo.getList());
 
     }
 }

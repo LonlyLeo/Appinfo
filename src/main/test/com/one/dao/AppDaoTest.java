@@ -36,6 +36,7 @@ public class AppDaoTest {
     public void testQueryApp(){
         QueryBean queryBean = new QueryBean();
         queryBean.setSoftwareName("饥荒");
+        queryBean.setStatus(5);
         List<AppInfo> appinfos = this.appDao.queryApp(queryBean);
         for (AppInfo appinfo : appinfos) {
             System.out.println(appinfo);

@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface AppDao {
 
-    List<AppInfo> queryApp(@Param("queryBean") QueryBean queryBean);
+    List<AppInfo> queryApp(QueryBean queryBean);
 
     @Select("select * from app_info")
     Page<AppInfo> findAll();

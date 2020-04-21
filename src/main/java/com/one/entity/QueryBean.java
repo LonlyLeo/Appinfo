@@ -9,7 +9,7 @@ public class QueryBean implements Serializable{
 
     private String softwareName;      //软件名称
     private Integer status;           //App状态
-    private String flatForm;          //所属平台
+    private String flatformId;          //所属平台
     private Integer categoryLevel1;   //一级分类
     private Integer categoryLevel2;   //二级分类
     private Integer categoryLevel3;   //三级分类
@@ -30,12 +30,12 @@ public class QueryBean implements Serializable{
         this.status = status;
     }
 
-    public String getFlatForm() {
-        return flatForm;
+    public String getFlatformId() {
+        return flatformId;
     }
 
-    public void setFlatForm(String flatForm) {
-        this.flatForm = flatForm;
+    public void setFlatformId(String flatformId) {
+        this.flatformId = flatformId;
     }
 
     public Integer getCategoryLevel1() {
