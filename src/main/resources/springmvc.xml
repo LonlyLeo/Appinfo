@@ -19,5 +19,7 @@
     </bean>
 
     <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/resources/**" location="classpath:/META-INF/resources/"/>
+
     <mvc:annotation-driven/>
 </beans>

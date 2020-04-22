@@ -12,6 +12,11 @@ import java.util.List;
 @Repository
 public interface AppDao {
 
+    /**
+     * 通过query查询AppInfo
+     * @param queryBean
+     * @return
+     */
     List<AppInfo> queryApp(QueryBean queryBean);
 
     @Select("select * from app_info")

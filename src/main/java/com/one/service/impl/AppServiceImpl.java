@@ -20,6 +20,13 @@ public class AppServiceImpl implements AppService {
     @Autowired
     private AppDao appDao;
 
+    /**
+     * 通过QueryBean查询分页结果集
+     * @param queryBean
+     * @param page
+     * @param rows
+     * @return
+     */
     @Override
     public PageResult<AppInfo> queryApp(QueryBean queryBean,Integer page,Integer rows) {
 
