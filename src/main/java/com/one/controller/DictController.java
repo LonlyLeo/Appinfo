@@ -5,6 +5,7 @@ import com.one.service.DicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +21,7 @@ public class DictController {
      * 返回字典所有数据
      * @return
      */
-    @RequestMapping("findDic")
+    @GetMapping("findDic")
     public ResponseEntity<List<DataDictionary>> queryDic(){
         List<DataDictionary> dataDictionaries = this.dicService.queryDic();
         if (CollectionUtils.isEmpty(dataDictionaries)){

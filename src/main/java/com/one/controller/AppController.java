@@ -24,11 +24,11 @@ public class AppController {
      * @param rows
      * @return
      */
-    @GetMapping("/find")
+    @PostMapping("/find")
     public ResponseEntity<PageResult<AppInfo>> queryApp(
             @RequestBody QueryBean queryBean,
-            @RequestParam(value = "page", defaultValue = "1") Integer page,
-            @RequestParam(value = "rows", defaultValue = "5") Integer rows
+            @RequestParam(value = "page", defaultValue = "1",required = true) Integer page,
+            @RequestParam(value = "rows", defaultValue = "5",required = true) Integer rows
     ){
         PageResult<AppInfo> result = this.appService.queryApp(queryBean,page,rows);
         return ResponseEntity.ok(result);
